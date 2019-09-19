@@ -2,12 +2,12 @@ use Test;
 
 use Algorithm::Snail :ALL;
 
-sub dump_matrix( $seq, @seq_params, $size_x, $size_y ) {
+sub dump_matrix( $seq, $size_x, $size_y, *%seq_params ) {
     my $i = 0;
     my $off_x = ($size_x - 1) / 2;
     my $off_y = ($size_y - 1) / 2;
     my @arr;
-    for $seq.(|@seq_params) -> ($x,$y) {
+    for &$seq(|%seq_params) -> ($x,$y) {
         #say "{$i.fmt('%3d')} {$x.fmt('%3d')},{$y.fmt('%3d')}";
         fail "Error $x,$y ({$x+$off_x,$y+$off_y}) already has value {@arr[$y+$off_y][$x+$off_x]}"
                 with @arr[$y+$off_y][$x+$off_x];
@@ -22,7 +22,11 @@ sub dump_matrix( $seq, @seq_params, $size_x, $size_y ) {
 }
 
 {
-    my $out_matrix = dump_matrix( &square_snail, (), 11, 11 );
+    my $out_matrix = dump_matrix(
+        &square_snail,
+        11, 11,
+        :order('x-y')
+    );
     diag "\n"~$out_matrix;
     is(
         $out_matrix,
@@ -43,8 +47,40 @@ sub dump_matrix( $seq, @seq_params, $size_x, $size_y ) {
     );
 }
 
+
 {
-    my $out_matrix = dump_matrix( &rectangle_snail, (2,), 11, 5 );
+    my $out_matrix = dump_matrix(
+            &square_snail,
+            11, 11,
+            :order('clockwise')
+            );
+    diag "\n"~$out_matrix;
+    is(
+        $out_matrix,
+        qq:to/END/.chomp,
+        121 117 109 101  93  82  86  94 102 110 118
+        116  81  77  69  61  50  54  62  70  78 111
+        108  76  49  45  37  26  30  38  46  71 103
+        100  68  44  25  21  10  14  22  39  63  95
+         92  60  36  20   9   2   6  15  31  55  87
+         85  53  29  13   5   1   3  11  27  51  83
+         91  59  35  19   8   4   7  16  32  56  88
+         99  67  43  24  18  12  17  23  40  64  96
+        107  75  48  42  34  28  33  41  47  72 104
+        115  80  74  66  58  52  57  65  73  79 112
+        120 114 106  98  90  84  89  97 105 113 119
+        END
+        'square matrix 11x11'
+    );
+}
+
+
+{
+    my $out_matrix = dump_matrix(
+        &rectangle_snail,
+        11, 5,
+        :ratio(2), :order('x-y')
+    );
     diag "\n"~$out_matrix;
     is(
         $out_matrix,
