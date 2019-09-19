@@ -28,26 +28,29 @@ Lets start with hardcoded begin of the sequence: magenta, red, blue.
 
 ![3x3](./vis-3x3.png)
 
-We can continue with 4x red, 4x blue, 4x green 
+We can continue with 4x red, 4x blue, 8x green
 
 ![5x5](./vis-5x5.png)
 
 but let's first skip two layers to visualize the pattern clearly. You 
-ee the 4x red will be the first and the 4x blue the last also one and 
-two steps from the core.  
+see 4x red will be the first and 4x blue the last. It's the same also
+one and two steps from the core.
 
 ![9x9-a](./vis-9x9-a.png)
 
-So lets skip on the outer most layer first to visualize that instead of
-four point we have now eight (so 8x dark green).
+Lets skip to the outer most layer first to visualize that he have again
+eight dark green positions. And near them also two more free space
+before we read the blue corner.
 
 ![9x9-b](./vis-9x9-b.png)
 
-And before we reach the blue there are also 8x middle green and 
-8x light green.
+And before we reach the blue corner there are also normal green and
+light green positions.
 
 ![9x9-c](./vis-9x9-c.png)
 
 Now we can return back to see that dark green emerged two layers sooner.
+Whole pattern and algorithm is visualized magenta, read, green from dark
+to light and finally blue.
 
 ![9x9](./vis-9x9.png)
