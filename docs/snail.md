@@ -51,7 +51,7 @@ light green positions.
 ![9x9-c](./vis-9x9-c.png)
 
 Now we can return back to see that dark green emerged two layers sooner.
-Whole pattern and algorithm is visualized magenta, read, green from dark
-to light and finally blue.
+Whole pattern and algorithm is visualized by colors in these order:
+magenta, red, green from dark to light and finally blue.
 
 ![9x9](./vis-9x9.png)
