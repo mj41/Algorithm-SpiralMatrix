@@ -63,6 +63,6 @@ Feel free to share your suggestions, patches or comment
 
 ## Licence and Copyright
 
-This is free software. Please see the LICENCE file.
+This is free software. Please see the [LICENCE file](LICENSE).
 
 © Michal Jurosz, 2019
