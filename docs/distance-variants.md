@@ -71,17 +71,45 @@ magenta, red, green from dark to light and finally blue.
 
 ![9x9](./distance-variants-9x9.png)
 
-Now finally Raku Perl 6 implementation of the core loop as can be found
-in [Algorithm::SpiralMatrix](../lib/Algorithm/SpiralMatrix.pm6);
+Now finally simplified ('clockwise' order only) Raku Perl 6 
+implementation of the core loop  as can be found in 
+[Algorithm::SpiralMatrix](../lib/Algorithm/SpiralMatrix.pm6):
 
 ```perl6
-    gather {
+unit module Algorithm::SpiralMatrix;
+
+multi sub square3x3-reds-order('clockwise') {
+    ( 0,-1), ( 1, 0), ( 0, 1), (-1, 0);
+}
+multi sub square3x3-blues-order('clockwise') {
+    ( 1,-1), ( 1, 1), (-1, 1), (-1,-1);
+}
+multi sub big-squares-reds-order('clockwise', $shift) {
+    (0,-$shift), ($shift,0), (0,$shift), (-$shift,0);
+}
+multi sub big-squares-greens-order('clockwise', $shift, $off) {
+                       (+$tone, -$shift),
+    (+$shift, -$tone), (+$shift, +$tone),
+    ( +$tone,+$shift), ( -$tone,+$shift),
+    (-$shift, +$tone), (-$shift, -$tone),
+    ( -$tone,-$shift);
+}
+multi sub big-squares-blues-order('clockwise', $shift) {
+    ($shift,-$shift), ($shift,$shift), (-$shift,$shift), (-$shift,-$shift);
+}
+
+sub square_distance(
+   :$order = 'clockwise'
+) is export {
+   # See docs/distance-variants.md to understand the algorithm
+   # and the colors in comments below.
+   gather {
         # 1x1
         take (0,0); # magenta
 
         # 3x3
         take $_ for square3x3-reds-order($order); # red
-        take $_ for square3x3-blues-order($order); # blue
+        take $_ for square3x3-blues-order($order); # red
 
         # 5x5, 7x7, ...
         my $shift = 2;
@@ -94,4 +122,5 @@ in [Algorithm::SpiralMatrix](../lib/Algorithm/SpiralMatrix.pm6);
             $shift++;
         }
     }
+}
 ```

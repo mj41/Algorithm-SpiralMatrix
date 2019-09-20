@@ -44,7 +44,7 @@ multi sub big-squares-blues-order('x-y', $shift) {
 sub square_distance(
    :$order = 'clockwise'
 ) is export {
-    # See docs/snail.md (or docs/vis-9x9.png) to understand the algorithm
+    # See docs/distance-variants.md to understand the algorithm
     # and the colors in comments below.
     gather {
         # 1x1
