@@ -1,7 +1,7 @@
-Copy/paste of ([t/snail.t](../t/snail.t)) test output
+Copy/paste of ([t/var-distance.t](../t/var-distance.t)) test output
  
 ````
-ok 1 - clockwise square matrix 11x11
+ok 1 - distance:clockwise square 11x11
 # 
 # 121 117 109 101  93  82  86  94 102 110 118
 # 116  81  77  69  61  50  54  62  70  78 111
@@ -15,7 +15,7 @@ ok 1 - clockwise square matrix 11x11
 # 115  80  74  66  58  52  57  65  73  79 112
 # 120 114 106  98  90  84  89  97 105 113 119
 # 
-ok 2 - clockwise rectangle matrix size to 11x5, ratio 2
+ok 2 - distance:clockwise rectangle 11x5, ratio 2
 # 
 #  55  45  35  31  27  22  24  28  32  42  52
 #  51  41  21  15   9   4   6  12  18  38  48
@@ -23,7 +23,7 @@ ok 2 - clockwise rectangle matrix size to 11x5, ratio 2
 #  50  40  20  14   8   5   7  13  19  39  49
 #  54  44  34  30  26  23  25  29  33  43  53
 # 
-ok 3 - x-y square matrix 11x11, x-y
+ok 3 - distance:x-y square 11x11
 # 
 # 118 110 102  94  86  82  87  95 103 111 119
 # 112  78  70  62  54  50  55  63  71  79 113
@@ -37,7 +37,7 @@ ok 3 - x-y square matrix 11x11, x-y
 # 114  80  76  68  60  53  61  69  77  81 115
 # 120 116 108 100  92  85  93 101 109 117 121
 # 
-ok 4 - x-y rectangle matrix size to 11x5, ratio 2
+ok 4 - distance:x-y rectangle 11x5, ratio 2
 # 
 #  52  42  32  28  24  22  25  29  33  43  53
 #  48  38  18  12   6   4   7  13  19  39  49

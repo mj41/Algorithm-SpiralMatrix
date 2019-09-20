@@ -1,20 +1,20 @@
 {
-    "name" : "Algorithm::Snail",
-    "description" : "Snail sort (snailshell pattern, spiral order) sequence in grid (two dimensional array)",
+    "name" : "Algorithm::SpiralMatrix",
+    "description" : "Various Perl 6 Sequences for spirals in matrix (two-dimensional arrays).",
     "version" : "0.2",
     "perl": "6.*",
     "auth": "github:mj41",
     "authors" : [ "Michal Jurosz" ],
     "license": "Artistic-2.0",
     "source-type" : "git",
-    "source-url" : "git://github.com/mj41/Algorithm-Snail.git",
+    "source-url" : "git://github.com/mj41/Algorithm-SpiralMatrix.git",
     "depends" : [],
     "build-depends": [],
     "provides" : {
-        "Algorithm::Snail" : "lib/Algorithm/Snail.pm6",
+        "Algorithm::SpiralMatrix" : "lib/Algorithm/SpiralMatrix.pm6"
     },
     "support": {
-        "bugtracker": "https://github.com/mj41/Algorithm-Snail/issues",
+        "bugtracker": "https://github.com/mj41/Algorithm-SpiralMatrix/issues",
         "license": "http://www.perlfoundation.org/artistic_license_2_0"
     },
     "tags": [ "algorithm", "bidimensional", "sequence", "array" ],

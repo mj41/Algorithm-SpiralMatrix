@@ -1,4 +1,4 @@
-unit module Algorithm::Snail;
+unit module Algorithm::SpiralMatrix;
 
 multi sub square3x3-reds-order('x-y') {
     ( 0,-1), (-1, 0), ( 1, 0), ( 0, 1);
@@ -41,9 +41,9 @@ multi sub big-squares-blues-order('clockwise', $shift) {
 }
 
 
-sub square_snail(
+sub square_distance(
    :$order = 'clockwise'
-) is export(:ALL) {
+) is export {
     # See docs/snail.md (or docs/vis-9x9.png) to understand the algorithm
     # and the colors in comments below.
     gather {
@@ -67,8 +67,8 @@ sub square_snail(
     }
 }
 
-sub rectangle_snail( :$ratio, :$order=Nil ) is export(:ALL) {
-    my $iter := square_snail(:$order).iterator;
+sub rectangle_distance( :$ratio, :$order=Nil ) is export {
+    my $iter := square_distance(:$order).iterator;
     my @buffer;
     gather {
         take $iter.pull-one; # 0,0

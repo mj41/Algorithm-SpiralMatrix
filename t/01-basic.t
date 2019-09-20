@@ -2,6 +2,6 @@ use v6;
 
 use Test;
 
-use-ok "Algorithm::Snail";
+use-ok "Algorithm::SpiralMatrix";
 
 done-testing;

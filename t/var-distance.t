@@ -1,6 +1,6 @@
 use Test;
 
-use Algorithm::Snail :ALL;
+use Algorithm::SpiralMatrix;
 
 sub dump_matrix( $seq, $size_x, $size_y, *%seq_params ) {
     my $i = 0;
@@ -24,7 +24,7 @@ sub dump_matrix( $seq, $size_x, $size_y, *%seq_params ) {
 
 {
     my $out_matrix = dump_matrix(
-        &square_snail,
+        &square_distance,
         11, 11,
         :order('clockwise')
     );
@@ -43,14 +43,14 @@ sub dump_matrix( $seq, $size_x, $size_y, *%seq_params ) {
         115  80  74  66  58  52  57  65  73  79 112
         120 114 106  98  90  84  89  97 105 113 119
         END
-        'clockwise square matrix 11x11'
+        'distance:clockwise square 11x11'
     );
     diag "\n$out_matrix\n";
 }
 
 {
     my $out_matrix = dump_matrix(
-        &rectangle_snail,
+        &rectangle_distance,
         11, 5,
         :ratio(2), :order('clockwise')
     );
@@ -63,7 +63,7 @@ sub dump_matrix( $seq, $size_x, $size_y, *%seq_params ) {
          50  40  20  14   8   5   7  13  19  39  49
          54  44  34  30  26  23  25  29  33  43  53
         END
-        'clockwise rectangle matrix size to 11x5, ratio 2'
+        'distance:clockwise rectangle 11x5, ratio 2'
     );
     diag "\n$out_matrix\n";
 }
@@ -71,7 +71,7 @@ sub dump_matrix( $seq, $size_x, $size_y, *%seq_params ) {
 
 {
     my $out_matrix = dump_matrix(
-        &square_snail,
+        &square_distance,
         11, 11,
         :order('x-y')
     );
@@ -90,14 +90,14 @@ sub dump_matrix( $seq, $size_x, $size_y, *%seq_params ) {
         114  80  76  68  60  53  61  69  77  81 115
         120 116 108 100  92  85  93 101 109 117 121
         END
-        'x-y square matrix 11x11, x-y'
+        'distance:x-y square 11x11'
     );
     diag "\n$out_matrix\n";
 }
 
 {
     my $out_matrix = dump_matrix(
-        &rectangle_snail,
+        &rectangle_distance,
         11, 5,
         :ratio(2), :order('x-y')
     );
@@ -110,7 +110,7 @@ sub dump_matrix( $seq, $size_x, $size_y, *%seq_params ) {
          50  40  20  14   8   5   9  15  21  41  51
          54  44  34  30  26  23  27  31  35  45  55
         END
-        'x-y rectangle matrix size to 11x5, ratio 2'
+        'distance:x-y rectangle 11x5, ratio 2'
     );
     diag "\n$out_matrix\n";
 }
