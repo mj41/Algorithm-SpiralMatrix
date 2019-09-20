@@ -1,25 +1,5 @@
 unit module Algorithm::SpiralMatrix;
 
-multi sub square3x3-reds-order('x-y') {
-    ( 0,-1), (-1, 0), ( 1, 0), ( 0, 1);
-}
-multi sub square3x3-blues-order('x-y') {
-    (-1,-1), ( 1,-1), (-1, 1), ( 1, 1);
-}
-multi sub big-squares-reds-order('x-y', $shift) {
-    (0,-$shift), (-$shift,0), ($shift,0), (0,$shift);
-}
-multi sub big-squares-greens-order('x-y', $shift, $off) {
-    (  -$off,-$shift), ( +$off, -$shift),
-    (-$shift,  -$off), (+$shift,  -$off),
-    (-$shift,  +$off), (+$shift,  +$off),
-    (  -$off,+$shift), (  +$off,+$shift);
-}
-multi sub big-squares-blues-order('x-y', $shift) {
-    (-$shift,-$shift), ($shift,-$shift), (-$shift,$shift), ($shift,$shift);
-}
-
-
 multi sub square3x3-reds-order('clockwise') {
     ( 0,-1), ( 1, 0), ( 0, 1), (-1, 0);
 }
@@ -30,14 +10,34 @@ multi sub big-squares-reds-order('clockwise', $shift) {
     (0,-$shift), ($shift,0), (0,$shift), (-$shift,0);
 }
 multi sub big-squares-greens-order('clockwise', $shift, $off) {
-                       ( +$off, -$shift),
-    (+$shift,  -$off), (+$shift,  +$off),
-    (  +$off,+$shift), (  -$off,+$shift),
-    (-$shift,  +$off), (-$shift,  -$off),
-    (  -$off,-$shift);
+                       (+$tone, -$shift),
+    (+$shift, -$tone), (+$shift, +$tone),
+    ( +$tone,+$shift), ( -$tone,+$shift),
+    (-$shift, +$tone), (-$shift, -$tone),
+    ( -$tone,-$shift);
 }
 multi sub big-squares-blues-order('clockwise', $shift) {
     ($shift,-$shift), ($shift,$shift), (-$shift,$shift), (-$shift,-$shift);
+}
+
+
+multi sub square3x3-reds-order('x-y') {
+    ( 0,-1), (-1, 0), ( 1, 0), ( 0, 1);
+}
+multi sub square3x3-blues-order('x-y') {
+    (-1,-1), ( 1,-1), (-1, 1), ( 1, 1);
+}
+multi sub big-squares-reds-order('x-y', $shift) {
+    (0,-$shift), (-$shift,0), ($shift,0), (0,$shift);
+}
+multi sub big-squares-greens-order('x-y', $shift, $off) {
+    ( -$tone,-$shift), (+$tone, -$shift),
+    (-$shift, -$tone), (+$shift, -$tone),
+    (-$shift, +$tone), (+$shift, +$tone),
+    ( -$tone,+$shift), ( +$tone,+$shift);
+}
+multi sub big-squares-blues-order('x-y', $shift) {
+    (-$shift,-$shift), ($shift,-$shift), (-$shift,$shift), ($shift,$shift);
 }
 
 
@@ -58,8 +58,8 @@ sub square_distance(
         my $shift = 2;
         loop {
             take $_ for big-squares-reds-order($order,$shift); # red
-            for 1..^$shift -> $off {
-                take $_ for big-squares-greens-order($order,$shift,$off); # green
+            for 1..^$shift -> $tone {
+                take $_ for big-squares-greens-order($order,$shift,$tone); # green tone
             }
             take $_ for big-squares-blues-order($order,$shift); # blue
             $shift++;
