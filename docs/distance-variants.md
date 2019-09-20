@@ -13,30 +13,30 @@ from 0,0 to 1,0 is shorten than to from 0,0 to 1,1 as
 (1^2+0^2)^1/2 <(1^2+1^2)^1/2. 
 
 The first five elements
-````
+```
 
            2
          5 1 3
            4  
-````
+```
 
 next four
-````
+```
          9 2 6
          5 1 3
          8 4 7
 
-````
+```
 
 and all others to fill 5x5 matrix.
-````
+```
     25 21 10 14 22
     20  9  2  6 15
     13  5  1  3 11
     19  8  4  7 16
     24 18 12 17 23
 
-````
+```
 
 ## Algorithm explanation
 
@@ -50,11 +50,11 @@ We can continue with 4x red, 4x blue, 8x green
 
 but let's first skip two layers to visualize the pattern clearly. You 
 see 4x red will be the first and 4x blue the last. It's the same also
-one and two steps from the core.
+one, two or more steps from the core.
 
 ![9x9-a](./distance-variants-9x9-a.png)
 
-Lets skip to the outer most layer first to visualize that he have again
+Lets skip to the outer most layer first to visualize that we have again
 eight dark green positions. And near them also two more free space
 before we read the blue corner.
 
@@ -70,3 +70,28 @@ Whole pattern and algorithm is visualized by colors in these order:
 magenta, red, green from dark to light and finally blue.
 
 ![9x9](./distance-variants-9x9.png)
+
+Now finally Raku Perl 6 implementation of the core loop as can be found
+in [Algorithm::SpiralMatrix](../lib/Algorithm/SpiralMatrix.pm6);
+
+```perl6
+    gather {
+        # 1x1
+        take (0,0); # magenta
+
+        # 3x3
+        take $_ for square3x3-reds-order($order); # red
+        take $_ for square3x3-blues-order($order); # blue
+
+        # 5x5, 7x7, ...
+        my $shift = 2;
+        loop {
+            take $_ for big-squares-reds-order($order,$shift); # red
+            for 1..^$shift -> $tone {
+                take $_ for big-squares-greens-order($order,$shift,$tone); # green tone
+            }
+            take $_ for big-squares-blues-order($order,$shift); # blue
+            $shift++;
+        }
+    }
+```
