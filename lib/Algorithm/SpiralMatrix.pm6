@@ -9,7 +9,7 @@ multi sub square3x3-blues-order('clockwise') {
 multi sub big-squares-reds-order('clockwise', $shift) {
     (0,-$shift), ($shift,0), (0,$shift), (-$shift,0);
 }
-multi sub big-squares-greens-order('clockwise', $shift, $off) {
+multi sub big-squares-greens-order('clockwise', $shift, $tone) {
                        (+$tone, -$shift),
     (+$shift, -$tone), (+$shift, +$tone),
     ( +$tone,+$shift), ( -$tone,+$shift),
@@ -30,7 +30,7 @@ multi sub square3x3-blues-order('x-y') {
 multi sub big-squares-reds-order('x-y', $shift) {
     (0,-$shift), (-$shift,0), ($shift,0), (0,$shift);
 }
-multi sub big-squares-greens-order('x-y', $shift, $off) {
+multi sub big-squares-greens-order('x-y', $shift, $tone) {
     ( -$tone,-$shift), (+$tone, -$shift),
     (-$shift, -$tone), (+$shift, -$tone),
     (-$shift, +$tone), (+$shift, +$tone),
