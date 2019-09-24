@@ -1,3 +1,5 @@
 language: perl6
 perl6:
   - latest
+script:
+  - prove -e 'perl6 -Ilib -It/lib' -r t/
