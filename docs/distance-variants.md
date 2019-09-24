@@ -14,7 +14,6 @@ from 0,0 to 1,0 is shorten than to from 0,0 to 1,1 as
 
 The first five elements
 ```
-
            2
          5 1 3
            4  
@@ -25,7 +24,6 @@ next four
          9 2 6
          5 1 3
          8 4 7
-
 ```
 
 and all others to fill 5x5 matrix.
@@ -37,6 +35,33 @@ and all others to fill 5x5 matrix.
     24 18 12 17 23
 
 ```
+
+## Example for 'distance::x-y'
+
+Order 'x-y' start in top-left corner (minimal value of 'x' and minimal
+value of 'y'), continue raising 'x' first and 'y' later.
+
+Basical this is useful in case you would like to process two dimensional
+array that is serialize to one dimensional (Buf) as [x,y] so
+```
+[0,0],..,[$x.end,0],[0,1],..,[$x.end,$y.max]
+```
+.
+
+The first five elements
+```
+           2
+         3 1 4
+           5
+```
+
+next four
+```
+         6 2 7
+         3 1 4
+         8 5 9
+```
+
 
 ## Algorithm explanation
 
@@ -87,7 +112,7 @@ multi sub square3x3-blues-order('clockwise') {
 multi sub big-squares-reds-order('clockwise', $shift) {
     (0,-$shift), ($shift,0), (0,$shift), (-$shift,0);
 }
-multi sub big-squares-greens-order('clockwise', $shift, $off) {
+multi sub big-squares-greens-order('clockwise', $shift, $tone) {
                        (+$tone, -$shift),
     (+$shift, -$tone), (+$shift, +$tone),
     ( +$tone,+$shift), ( -$tone,+$shift),
