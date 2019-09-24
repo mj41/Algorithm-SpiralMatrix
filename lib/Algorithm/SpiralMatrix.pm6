@@ -67,7 +67,55 @@ sub square_distance(
     }
 }
 
+# ToDo - Duplication below - maybe macro would help.
+#
+multi sub line( 'x', 'clockwise' ) {
+    gather {
+        take (0,0);
+        my $shift = 1;
+        loop {
+            take (+$shift,0);
+            take (-$shift,0);
+            $shift++;
+        }
+    }
+}
+multi sub line( 'y', 'clockwise' ) {
+    gather {
+        take (0,0);
+        my $shift = 1;
+        loop {
+            take (0, -$shift);
+            take (0, +$shift);
+            $shift++;
+        }
+    }
+}
+
+multi sub line( 'x', 'x-y' ) {
+    gather {
+        take (0,0);
+        my $shift = 1;
+        loop {
+            take (-$shift,0);
+            take (+$shift,0);
+            $shift++;
+        }
+    }
+}
+multi sub line( 'y', 'x-y' ) {
+    line( 'y', 'clockwise' );
+}
+
+multi sub rectangle_line( :$direction, :$order='clockwise' ) is export {
+    line( $direction, $order );
+}
+
 sub rectangle_distance( :$ratio, :$order=Nil ) is export {
+
+    return line('x',$order) if $ratio == Inf;
+    return line('y',$order) if $ratio == 0;
+
     my $iter := square_distance(:$order).iterator;
     my @buffer;
     gather {
