@@ -1,6 +1,6 @@
-Copy/paste of ([t/var-distance.t](../t/var-distance.t)) test output
- 
-````
+<!-- use './tool/gen-docs-test-output.p6 > docs/test-output.md' to regenerate this file -->
+Test [t/var-distance.t](../t/var-distance.t) output:
+```
 ok 1 - distance:clockwise square 11x11
 # 
 # 121 117 109 101  93  82  86  94 102 110 118
@@ -46,4 +46,54 @@ ok 4 - distance:x-y rectangle 11x5, ratio 2
 #  54  44  34  30  26  23  27  31  35  45  55
 # 
 1..4
-````
+
+```
+
+
+Test [t/line.t](../t/line.t) output:
+```
+ok 1 - distance:clockwise line 11x3
+# 
+#   0   0   0   0   0   0   0   0   0   0   0
+#  11   9   7   5   3   1   2   4   6   8  10
+#   0   0   0   0   0   0   0   0   0   0   0
+# 
+ok 2 - distance:clockwise line 3x11
+# 
+#   0  10   0
+#   0   8   0
+#   0   6   0
+#   0   4   0
+#   0   2   0
+#   0   1   0
+#   0   3   0
+#   0   5   0
+#   0   7   0
+#   0   9   0
+#   0  11   0
+# 
+ok 3 - distance:x-y line 11x3
+# 
+#   0   0   0   0   0   0   0   0   0   0   0
+#  10   8   6   4   2   1   3   5   7   9  11
+#   0   0   0   0   0   0   0   0   0   0   0
+# 
+ok 4 - distance:clockwise line 3x11
+# 
+#   0  10   0
+#   0   8   0
+#   0   6   0
+#   0   4   0
+#   0   2   0
+#   0   1   0
+#   0   3   0
+#   0   5   0
+#   0   7   0
+#   0   9   0
+#   0  11   0
+# 
+1..4
+
+```
+
+
