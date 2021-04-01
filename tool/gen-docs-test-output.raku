@@ -10,7 +10,7 @@ sub get_out($cmd) {
 }
 
 
-say "<!-- use './tool/gen-docs-test-output.p6 > docs/test-output.md' to regenerate this file -->";
+say "<!-- use './tool/gen-docs-test-output.raku > docs/test-output.md' to regenerate this file -->";
 for 'var-distance','line' -> $t-file-base  {
     my $t-file-rel-path = "t/{$t-file-base}.rakutest";
     say "Test [{$t-file-rel-path}](../{$t-file-rel-path}) output:";
