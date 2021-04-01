@@ -1,7 +1,7 @@
 {
     "name": "Algorithm::SpiralMatrix",
     "description": "Various Perl 6 Sequences for spirals in matrix (two-dimensional arrays).",
-    "version": "0.4",
+    "version": "0.5",
     "perl": "6.d",
     "raku": "6.d",
     "production": 1,
