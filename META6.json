@@ -21,6 +21,7 @@
     },
     "tags": [ "algorithm", "bidimensional", "sequence", "array" ],
     "test-depends": [
-        "Test"
+        "Test",
+        "Test::META"
     ]
 }
