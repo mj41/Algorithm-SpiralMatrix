@@ -1,4 +1,4 @@
-use Algorithm::SpiralMatrix;
+use SpiralMatrix;
 
 my $i = 1;
 for square_distance(order => 'clockwise') -> ($x,$y) {

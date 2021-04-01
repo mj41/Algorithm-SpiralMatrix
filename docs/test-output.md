@@ -1,5 +1,5 @@
-<!-- use './tool/gen-docs-test-output.p6 > docs/test-output.md' to regenerate this file -->
-Test [t/var-distance.t](../t/var-distance.t) output:
+<!-- use './tool/gen-docs-test-output.raku > docs/test-output.md' to regenerate this file -->
+Test [t/var-distance.rakutest](../t/var-distance.rakutest) output:
 ```
 ok 1 - distance:clockwise square 11x11
 # 
@@ -50,7 +50,7 @@ ok 4 - distance:x-y rectangle 11x5, ratio 2
 ```
 
 
-Test [t/line.t](../t/line.t) output:
+Test [t/line.rakutest](../t/line.rakutest) output:
 ```
 ok 1 - distance:clockwise line 11x3
 # 

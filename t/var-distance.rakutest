@@ -1,6 +1,9 @@
 use Test;
-use ASMTestCommon;
 use Algorithm::SpiralMatrix;
+
+use lib 't/lib';
+use ASMTestCommon;
+
 
 {
     my $out_matrix = dump_matrix(

@@ -98,7 +98,7 @@ magenta, red, green from dark to light and finally blue.
 
 Now finally simplified ('clockwise' order only) Raku Perl 6 
 implementation of the core loop as can be found in
-[Algorithm::SpiralMatrix](../lib/Algorithm/SpiralMatrix.pm6):
+[Algorithm::SpiralMatrix](../lib/Algorithm/SpiralMatrix.rakumod):
 
 ```perl6
 unit module Algorithm::SpiralMatrix;
