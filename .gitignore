@@ -1,3 +1,4 @@
 .idea/
-lib/.precomp/
 Algorithm-SpiralMatrix.iml
+.precomp/
+lib/.precomp/
