@@ -1,4 +1,4 @@
-#!/usr/bin/env perl6
+#!/usr/bin/env raku
 
 sub get_out($cmd) {
     my $proc = run $cmd.split(" "), :out, :merge;
@@ -15,7 +15,7 @@ for 'var-distance','line' -> $t-file-base  {
     my $t-file-rel-path = "t/{$t-file-base}.rakutest";
     say "Test [{$t-file-rel-path}](../{$t-file-rel-path}) output:";
     say '```';
-    my $cmd = "perl6 -Ilib -It/lib {$t-file-rel-path}";
+    my $cmd = "raku -Ilib -It/lib {$t-file-rel-path}";
     say get_out($cmd);
     say '```';
     say "\n";

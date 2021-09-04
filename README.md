@@ -1,6 +1,6 @@
 # Algorithm::SpiralMatrix
 
-Various Perl 6 Sequences for spirals in matrix (two-dimensional 
+Various Raku Sequences for spirals in matrix (two-dimensional
 arrays).
 
 For overview see [docs/test-output.md](docs/test-output.md) 
@@ -8,7 +8,7 @@ and [docs/distance-variants.md](docs/distance-variants.md).
 
 ## Synopsis
 
-```perl6
+```raku
 use Algorithm::SpiralMatrix;
 
 my $i = 1;
@@ -46,7 +46,7 @@ spiral sequences in matrix (two-dimensional array).
 
 ## Installation
 
-Rakudo Perl 6 distribution contains *zef*. Use
+Rakudo Raku distribution contains *zef*. Use
 
 	zef install Algorithm::SpiralMatrix
 

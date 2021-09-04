@@ -96,11 +96,11 @@ magenta, red, green from dark to light and finally blue.
 
 ![9x9](./img/distance-variants-9x9.png)
 
-Now finally simplified ('clockwise' order only) Raku Perl 6 
+Now finally simplified ('clockwise' order only) Raku
 implementation of the core loop as can be found in
 [Algorithm::SpiralMatrix](../lib/Algorithm/SpiralMatrix.rakumod):
 
-```perl6
+```raku
 unit module Algorithm::SpiralMatrix;
 
 multi sub square3x3-reds-order('clockwise') {
