@@ -1,27 +1,34 @@
 {
-    "name": "Algorithm::SpiralMatrix",
-    "description": "Various Perl 6 Sequences for spirals in matrix (two-dimensional arrays).",
-    "version": "0.5",
-    "perl": "6.d",
-    "raku": "6.d",
-    "production": 1,
-    "auth": "github:mj41",
-    "authors": [ "Michal Jurosz" ],
-    "source-type": "git",
-    "source-url": "git://github.com/mj41/Algorithm-SpiralMatrix.git",
-    "depends": [],
-    "build-depends": [],
-    "provides": {
-        "Algorithm::SpiralMatrix": "lib/Algorithm/SpiralMatrix.rakumod"
-    },
-    "support": {
-        "bugtracker": "https://github.com/mj41/Algorithm-SpiralMatrix/issues",
-        "license": "http://www.perlfoundation.org/artistic_license_2_0"
-    },
-    "tags": [ "algorithm", "bidimensional", "sequence", "array" ],
-    "test-depends": [
-        "Test",
-        "Test::META"
-    ]
+  "name": "Algorithm::SpiralMatrix",
+  "description": "Various Perl 6 Sequences for spirals in matrix (two-dimensional arrays).",
+  "version": "0.5",
+  "perl": "6.d",
+  "authors": [
+    "Michal Jurosz"
+  ],
+  "auth": "github:mj41",
+  "depends": [],
+  "build-depends": [],
+  "test-depends": [
+    "Test",
+    "Test::META"
+  ],
+  "provides": {
+    "Algorithm::SpiralMatrix": "lib/Algorithm/SpiralMatrix.rakumod"
+  },
+  "support": {
+    "bugtracker": "https://github.com/mj41/Algorithm-SpiralMatrix/issues",
+    "license": "http://www.perlfoundation.org/artistic_license_2_0"
+  },
   "license": "Apache-2.0",
+  "tags": [
+    "algorithm",
+    "bidimensional",
+    "sequence",
+    "array"
+  ],
+  "production": 1,
+  "source-url": "git://github.com/mj41/Algorithm-SpiralMatrix.git",
+  "raku": "6.d",
+  "source-type": "git"
 }
