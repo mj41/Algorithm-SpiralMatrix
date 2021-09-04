@@ -7,7 +7,6 @@
     "production": 1,
     "auth": "github:mj41",
     "authors": [ "Michal Jurosz" ],
-    "license": "Artistic-2.0",
     "source-type": "git",
     "source-url": "git://github.com/mj41/Algorithm-SpiralMatrix.git",
     "depends": [],
@@ -24,4 +23,5 @@
         "Test",
         "Test::META"
     ]
+  "license": "Apache-2.0",
 }
