@@ -1,7 +1,7 @@
 {
   "name": "Algorithm::SpiralMatrix",
   "description": "Various Raku Sequences for spirals in matrix (two-dimensional arrays).",
-  "version": "0.5",
+  "version": "0.6.0",
   "perl": "6.d",
   "authors": [
     "Michal Jurosz"
